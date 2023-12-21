@@ -17,8 +17,7 @@ def top_100_values_sorted(dataframe, column_name):
 
 # Read data from Excel file
 excel_file_path = 'GENERIC_AVG_DIST_DISTRIBUTION.xlsx'  # Update with your actual file path
-df = pd.read_excel(excel_file_path,index_col='Medicine Name')
-
+df = pd.read_excel(excel_file_path, index_col='Medicine Name', engine='openpyxl')
 # Streamlit App
 st.title('Top 100 Values Selector')
 
@@ -35,8 +34,8 @@ import streamlit as st
 import matplotlib.pyplot as plt
 
 # Read data from Excel file
-your_dataframe = pd.read_excel('PLOTTING_DATA_AVG_DIST_DISTRIBUTION.xlsx', index_col='Medicine Name')
-df = your_dataframe.copy()
+excel_file_path = 'PLOTTING_DATA_AVG_DIST_DISTRIBUTION.xlsx'  # Update with your actual file path
+df = pd.read_excel(excel_file_path, index_col='Medicine Name', engine='openpyxl')
 
 # Function for creating the bar plot
 def MED_BAR_PLOT(dataframe, row_name):
