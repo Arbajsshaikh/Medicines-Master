@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 
 # Read data from Excel file
 excel_file_path = 'PLOTTING_DATA_AVG_DIST_DISTRIBUTION.xlsx'  # Update with your actual file path
-df = pd.read_excel(excel_file_path, index_col='Medicine Name', engine='openpyxl')
+df = pd.read_excel(excel_file_path, index_col='Medicine Name')
 
 # Function for creating the bar plot
 def MED_BAR_PLOT(dataframe, row_name):
