@@ -17,8 +17,15 @@ def top_100_values_sorted(dataframe, column_name):
 
 # Read data from Excel file
 excel_file_path = 'GENERIC_AVG_DIST_DISTRIBUTION.xlsx'  # Update with your actual file path
-df = pd.read_excel(excel_file_path, index_col='Medicine Name', engine='openpyxl')
-# Streamlit App
+df = pd.read_excel(excel_file_path, index_col='Medicine Name')
 
+# Streamlit App
 st.title('Top 100 Values Selector')
 
+# Selector for column
+selected_column = st.selectbox('Select Column', df.columns[1:])
+
+# Display top 100 values
+if selected_column:
+    result = top_100_values_sorted(df, selected_column)
+    st.dataframe(result)
