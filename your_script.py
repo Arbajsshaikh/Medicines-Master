@@ -3,3 +3,19 @@
 import streamlit as st
 import pandas as pd
 
+def top_100_values_sorted(dataframe, column_name):
+    if column_name not in dataframe.columns:
+        return f"Column '{column_name}' not found in the dataframe."
+
+    # Get the specified column
+    selected_column = dataframe[column_name]
+
+    # Sort values in descending order and select the top 100
+    top_100_values = selected_column.sort_values(ascending=True).head(100)
+
+    return pd.DataFrame(top_100_values, columns=[column_name])
+
+# Read data from Excel file
+
+st.title('Top 100 Values Selector')
+
