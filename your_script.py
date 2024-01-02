@@ -4,7 +4,7 @@ import streamlit as st
 import matplotlib.pyplot as plt
 
 # Read data from Excel file
-your_dataframe = pd.read_csv(r"D:\data\PURCHASE DEPT\PLOTTING_DATA_AVG_DIST_DISTRIBUTION.csv", index_col='Medicine Name')
+your_dataframe = pd.read_csv(r"PLOTTING_DATA_AVG_DIST_DISTRIBUTION.csv", index_col='Medicine Name')
 df = your_dataframe.copy()
 
 # Function for creating the bar plot
