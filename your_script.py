@@ -84,5 +84,3 @@ selected_column = st.selectbox('Select Column', df.columns[1:])
 if selected_column:
     result = top_100_values_sorted(df, selected_column)
     st.dataframe(result)
-
-
